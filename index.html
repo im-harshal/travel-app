@@ -1,0 +1,84 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div id="datetime"></div>
+      <div id="user-info" style="display: none">
+        Welcome, <span id="user-name"></span>
+        <a href="php/logout.php">Logout</a>
+      </div>
+    </div>
+
+    <div id="loginForm">
+      <h2>Login</h2>
+      <form id="login">
+        <div class="form-group">
+          <label>Phone Number:</label>
+          <input type="text" name="phone" placeholder="ddd-ddd-dddd" required />
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    </div>
+
+    <div id="registerForm" style="display: none">
+      <h2>Register</h2>
+      <form id="register">
+        <div class="form-group">
+          <label>Phone Number:</label>
+          <input
+            type="text"
+            name="phone_number"
+            placeholder="ddd-ddd-dddd"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="password_" required />
+        </div>
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" name="confirm_password" required />
+        </div>
+        <div class="form-group">
+          <label>First Name:</label>
+          <input type="text" name="firstname" required />
+        </div>
+        <div class="form-group">
+          <label>Last Name:</label>
+          <input type="text" name="lastname" required />
+        </div>
+        <div class="form-group">
+          <label>Date of Birth:</label>
+          <input type="text" name="dob" placeholder="YYYY-MM-DD" required />
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label>Gender:</label>
+          <input type="radio" name="gender" value="male" /> Male
+          <input type="radio" name="gender" value="female" /> Female
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

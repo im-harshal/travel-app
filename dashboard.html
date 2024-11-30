@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="dashboard-styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div id="datetime"></div>
+      <div id="user-info"><span id="user-name"></span></div>
+    </div>
+
+    <nav class="nav-bar">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="#stays">Stays</a></li>
+          <li><a href="#flights">Flights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#cart">Cart</a></li>
+          <li><a href="#account">Account</a></li>
+        </ul>
+        <a href="php/logout.php" class="logout-link">Logout</a>
+      </div>
+    </nav>
+
+    <div class="content-wrapper">
+      <aside class="sidebar">
+        <h2>Side Navigation</h2>
+      </aside>
+
+      <main class="main-content">
+        <h2>Main Content</h2>
+        <p>
+          This is the main content area of the website. You can add your content
+          here.
+        </p>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script src="dashboard-script.js"></script>
+  </body>
+</html>
