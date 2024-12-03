@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Dashboard</title>
+    <title>My Account</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="dashboard-styles.css" />
+    <link rel="stylesheet" href="account-styles.css" />
   </head>
   <body>
     <div class="header">
@@ -33,11 +33,15 @@
       </aside>
 
       <main class="main-content">
-        <h2>Main Content</h2>
-        <p>
-          This is the main content area of the website. You can add your content
-          here.
-        </p>
+        <div id="div-admin" style="display: none">
+          <h2>Admin options</h2>
+          <button id="load-flights-button">Load Flights from XML</button>
+          <button id="load-hotels-button">Load Hotels from JSON</button>
+        </div>
+
+        <div id="div-user" style="display: none">
+          <h2>User options</h2>
+        </div>
       </main>
     </div>
 
@@ -45,6 +49,6 @@
       <p>&copy; 2024 Your Website. All rights reserved.</p>
     </footer>
 
-    <script src="dashboard-script.js"></script>
+    <script src="account-script.js"></script>
   </body>
 </html>

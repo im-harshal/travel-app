@@ -24,15 +24,6 @@ function updateDateTime() {
   $("#datetime").text(now.toLocaleString());
 }
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-});
-
 $(document).ready(function () {
   // Check login status immediately
   checkLoginStatus();
@@ -40,4 +31,40 @@ $(document).ready(function () {
   // Update datetime every second
   updateDateTime();
   setInterval(updateDateTime, 1000);
+
+  $("#commentForm").submit(function (e) {
+    e.preventDefault();
+
+    const formData = {
+      comment: $('input[name="comment_"]').val(),
+    };
+
+    if (formData.comment.length < 10) {
+      alert("Comment must be at least 10 characters long");
+      return;
+    }
+
+    $.ajax({
+      url: "php/contact.php",
+      type: "POST",
+      data: formData,
+      beforeSend: function (xhr) {
+        console.log("Sending data:", formData);
+      },
+      success: function (response) {
+        if (response.success) {
+          alert("Comment successfully stored");
+          // Reset the form
+          $("#commentForm")[0].reset();
+        } else {
+          alert(response.message);
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("AJAX error:", status, error);
+        console.log("Response text:", xhr.responseText);
+        alert("Error occurred during login");
+      },
+    });
+  });
 });
