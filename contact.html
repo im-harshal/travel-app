@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="dashboard-styles.css" />
+    <link rel="stylesheet" href="contact-styles.css" />
   </head>
   <body>
     <div class="header">
@@ -21,7 +21,7 @@
           <li><a href="#flights">Flights</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="#cart">Cart</a></li>
-          <li><a href="#account">Account</a></li>
+          <li><a href="account.html">Account</a></li>
         </ul>
         <a href="php/logout.php" class="logout-link">Logout</a>
       </div>
@@ -34,7 +34,18 @@
 
       <main class="main-content">
         <h2>Contact Us</h2>
-        <p>This is the contact us page.</p>
+        <form id="commentForm">
+          <div class="form-group">
+            <label>Comment:</label>
+            <input
+              type="textarea"
+              name="comment_"
+              placeholder="Comment must be at least 10 characters"
+              required
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </main>
     </div>
 

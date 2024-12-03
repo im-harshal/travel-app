@@ -47,9 +47,7 @@ $(document).ready(function () {
         console.log("Sending data:", formData);
       },
       success: function (response) {
-        console.log("Response from register.php", response);
         try {
-          console.log("Parsed response:", response);
           if (response.success) {
             alert("Registration successful! Please login.");
             $("#showLogin").click();
@@ -164,3 +162,12 @@ function checkLoginStatus() {
     },
   });
 }
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});

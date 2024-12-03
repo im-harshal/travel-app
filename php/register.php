@@ -2,10 +2,6 @@
 session_start();
 require_once 'config.php';
 
-// Debug logging
-error_log("=== New Registration Request ===");
-error_log("POST data: " . print_r($_POST, true));
-
 header('Content-Type: application/json');
 
 $response = ['success' => false, 'message' => ''];
