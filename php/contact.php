@@ -48,25 +48,24 @@ $xmlData->addChild('submission-date', date('Y-m-d H:i:s'));
 
 // Load existing XML file or create new one
 $xmlFilePath = '../data/contacts.xml';
-if (file_exists($xmlFilePath)) {
-    $existingXml = simplexml_load_file($xmlFilePath);
-    $dom = dom_import_simplexml($existingXml);
-    $newDom = dom_import_simplexml($xmlData);
-    $newNode = $dom->ownerDocument->importNode($newDom, true);
-    $dom->parentNode->appendChild($newNode);
-    $existingXml->asXML($xmlFilePath);
-} else {
+// if (file_exists($xmlFilePath)) {
+//     $existingXml = simplexml_load_file($xmlFilePath);
+//     $dom = dom_import_simplexml($existingXml);
+//     $newDom = dom_import_simplexml($xmlData);
+//     $newNode = $dom->ownerDocument->importNode($newDom, true);
+//     $dom->parentNode->appendChild($newNode);
+//     $existingXml->asXML($xmlFilePath);
+// } else {
     // Create directory if it doesn't exist
-    if (!file_exists('../data')) {
-        mkdir('../data', 0777, true);
-    }
-    // Save the new XML file
-    $xmlData->asXML($xmlFilePath);
+if (!file_exists('../data')) {
+    mkdir('../data', 0777, true);
 }
+// Save the new XML file
+$xmlData->asXML($xmlFilePath);
+// }
 
-// Close database connection
+// Close statement
 $stmt->close();
-$conn->close();
 
 echo json_encode(['success' => true]);
 ?>

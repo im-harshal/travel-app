@@ -29,7 +29,32 @@
 
     <div class="content-wrapper">
       <aside class="sidebar">
-        <h2>Side Navigation</h2>
+        <div class="theme-controls">
+          <h2>Display Settings</h2>
+          <!-- Font Size Controls -->
+          <div class="control-group">
+            <label>Font Size: <span id="fontSizeDisplay">16</span>px</label>
+            <div class="font-size-controls">
+              <button class="btn" onclick="changeFontSize(-2)">-</button>
+              <input
+                type="range"
+                id="fontSizeSlider"
+                min="12"
+                max="24"
+                value="16"
+              />
+              <button class="btn" onclick="changeFontSize(2)">+</button>
+            </div>
+          </div>
+
+          <!-- Background Color Controls -->
+          <div class="control-group">
+            <label>Background Color</label>
+            <div class="color-options" id="colorOptions">
+              <!-- Color buttons will be added by JavaScript -->
+            </div>
+          </div>
+        </div>
       </aside>
 
       <main class="main-content">
@@ -37,10 +62,114 @@
           <h2>Admin options</h2>
           <button id="load-flights-button">Load Flights from XML</button>
           <button id="load-hotels-button">Load Hotels from JSON</button>
+
+          <div class="admin-search-section">
+            <h3>Advanced Search Options</h3>
+
+            <!-- Texas Hotels Search -->
+            <div class="search-group">
+              <label>Hotels in Texas (Sep-Oct 2024):</label>
+              <select id="texas-hotel-city">
+                <option value="">Select City</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Houston">Houston</option>
+                <option value="Austin">Austin</option>
+              </select>
+              <button id="admin-search-texas-hotels-btn">Search</button>
+            </div>
+
+            <!-- Texas Flights Search -->
+            <div class="search-group">
+              <label>Flights from Texas (Sep-Oct 2024):</label>
+              <select id="texas-city">
+                <option value="">Select City</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Houston">Houston</option>
+                <option value="Austin">Austin</option>
+              </select>
+              <button id="admin-search-texas-flights-btn">Search</button>
+            </div>
+
+            <!-- California Flights Counter -->
+            <div class="search-group">
+              <label>Flights to California (Sep-Oct 2024):</label>
+              <select id="california-city">
+                <option value="">Select City</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="San Diego">San Diego</option>
+              </select>
+              <button id="admin-count-cali-flights-btn">Count Flights</button>
+            </div>
+          </div>
+
+          <!-- Special Searches -->
+          <div class="quick-searches">
+            <button
+              id="admin-search-exp-hotels-btn"
+              onclick="searchExpensiveHotels()"
+            >
+              Most Expensive Hotels
+            </button>
+            <button id="admin-search-exp-flights-btn">
+              Most Expensive Flights
+            </button>
+            <button id="admin-search-infant-flights-btn">
+              Flights with Infants
+            </button>
+            <button id="admin-search-infant-child-flights-btn">
+              Flights with Infants & 2+ Children
+            </button>
+            <button id="admin-search-texas-noinfants-flights-btn">
+              Texas Flights (No Infants)
+            </button>
+          </div>
+
+          <div id="admin-search-results"></div>
         </div>
 
         <div id="div-user" style="display: none">
           <h2>User options</h2>
+          <div class="search-section">
+            <h3>Search Bookings</h3>
+
+            <!-- Search by booking IDs -->
+            <div class="search-group">
+              <input
+                type="text"
+                id="booking-id"
+                placeholder="Enter Booking ID (Hotel/Flight)"
+              />
+              <button id="user-search-booking-btn">Search Booking</button>
+            </div>
+
+            <!-- Search flights by passenger SSN -->
+            <div class="search-group">
+              <input
+                type="text"
+                id="passenger-ssn"
+                placeholder="Enter Passenger SSN"
+              />
+              <button id="user-search-ssn-btn">Search Flights</button>
+            </div>
+
+            <!-- Search flight passengers -->
+            <div class="search-group">
+              <input
+                type="text"
+                id="flight-booking-id"
+                placeholder="Enter Flight Booking ID"
+              />
+              <button id="user-search-passengers-btn">View Passengers</button>
+            </div>
+          </div>
+
+          <!-- Search September 2024 bookings -->
+          <button id="user-search-september-btn">
+            View September 2024 Bookings
+          </button>
+
+          <div id="search-results"></div>
         </div>
       </main>
     </div>
