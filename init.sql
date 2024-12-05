@@ -29,6 +29,52 @@ CREATE TABLE hotels (
     price_per_night DECIMAL(10, 2)
 );
 
+CREATE TABLE passengers (
+    ssn VARCHAR(20) PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    dob DATE NOT NULL,
+    category ENUM('adults', 'children', 'infants') NOT NULL
+);
+
+CREATE TABLE flight_bookings (
+    flight_booking_id VARCHAR(20) PRIMARY KEY,
+    flight_id VARCHAR(10) NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (flight_id) REFERENCES flights(flightid)
+);
+
+CREATE TABLE tickets (
+    ticket_id VARCHAR(20) PRIMARY KEY,
+    flight_booking_id VARCHAR(20) NOT NULL,
+    ssn VARCHAR(20) NOT NULL,
+    passenger_price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (flight_booking_id) REFERENCES flight_bookings(flight_booking_id),
+    FOREIGN KEY (ssn) REFERENCES passengers(ssn)
+);
+
+CREATE TABLE hotel_bookings (
+    hotel_booking_id VARCHAR(20) PRIMARY KEY,
+    hotel_id VARCHAR(10) NOT NULL,
+    check_in_date DATE NOT NULL,
+    check_out_date DATE NOT NULL,
+    num_rooms INT NOT NULL,
+    price_per_night DECIMAL(10, 2) NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id)
+);
+
+CREATE TABLE guesses (
+    ssn VARCHAR(20) NOT NULL,
+    hotel_booking_id VARCHAR(20) NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    dob DATE NOT NULL,
+    category ENUM('adults', 'children', 'infants') NOT NULL,
+    PRIMARY KEY (ssn, hotel_booking_id),
+    FOREIGN KEY (hotel_booking_id) REFERENCES hotel_bookings(hotel_booking_id)
+);
+
 -- Create admin user (password: admin123)
 INSERT INTO users (phone, password, firstname, lastname, dob, email, gender)
 VALUES (

@@ -29,7 +29,32 @@
 
     <div class="content-wrapper">
       <aside class="sidebar">
-        <h2>Side Navigation</h2>
+        <div class="theme-controls">
+          <h2>Display Settings</h2>
+          <!-- Font Size Controls -->
+          <div class="control-group">
+            <label>Font Size: <span id="fontSizeDisplay">16</span>px</label>
+            <div class="font-size-controls">
+              <button class="btn" onclick="changeFontSize(-2)">-</button>
+              <input
+                type="range"
+                id="fontSizeSlider"
+                min="12"
+                max="24"
+                value="16"
+              />
+              <button class="btn" onclick="changeFontSize(2)">+</button>
+            </div>
+          </div>
+
+          <!-- Background Color Controls -->
+          <div class="control-group">
+            <label>Background Color</label>
+            <div class="color-options" id="colorOptions">
+              <!-- Color buttons will be added by JavaScript -->
+            </div>
+          </div>
+        </div>
       </aside>
 
       <main class="main-content">
