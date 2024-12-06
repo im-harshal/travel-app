@@ -3,31 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Dashboard</title>
+    <title>Travel - Stays</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="dashboard-styles.css" />
   </head>
   <body>
+    <!-- Header -->
     <div class="header">
       <div id="datetime"></div>
       <div id="user-info"><span id="user-name"></span></div>
     </div>
 
+    <!-- Navbar -->
     <nav class="nav-bar">
       <div class="nav-container">
         <ul class="nav-links">
           <li><a href="dashboard.html">Home</a></li>
-          <li><a href="stays.html">Stays</a></li>
+          <li><a href="stays.html" class="active">Stays</a></li>
           <li><a href="#flights">Flights</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="cartstays.html">Cart</a></li>
+          <li><a href="cartstay.html">Cart</a></li>
           <li><a href="account.html">Account</a></li>
         </ul>
         <a href="php/logout.php" class="logout-link">Logout</a>
       </div>
     </nav>
 
+    <!-- Content Wrapper -->
     <div class="content-wrapper">
+      <!-- Sidebar -->
       <aside class="sidebar">
         <div class="theme-controls">
           <h2>Display Settings</h2>
@@ -57,19 +61,45 @@
         </div>
       </aside>
 
+      <!-- Main Content -->
       <main class="main-content">
-        <h2>Main Content</h2>
-        <p>
-          This is the main content area of the website. You can add your content
-          here.
-        </p>
+        <h2>Find Your Stay</h2>
+        <form id="staySearch">
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="Enter city" required />
+          </div>
+          <div class="form-group">
+            <label for="checkInDate">Check-in Date:</label>
+            <input type="date" id="checkInDate" required />
+          </div>
+          <div class="form-group">
+            <label for="checkOutDate">Check-out Date:</label>
+            <input type="date" id="checkOutDate" required />
+          </div>
+          <div class="form-group">
+            <label for="adults">Adults:</label>
+            <input type="number" id="adults" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="children">Children:</label>
+            <input type="number" id="children" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="infants">Infants:</label>
+            <input type="number" id="infants" min="0" required />
+          </div>
+          <button type="button" id="searchButton">Search</button>
+        </form>
+        <div id="results"></div>
       </main>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
       <p>&copy; 2024 Your Website. All rights reserved.</p>
     </footer>
 
-    <script src="dashboard-script.js"></script>
+    <script src="stays.js"></script>
   </body>
 </html>

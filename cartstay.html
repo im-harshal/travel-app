@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div id="datetime"></div>
+        <div id="user-info"><span id="user-name"></span></div>
+      </div>
+  
+      <!-- Navbar -->
+      <nav class="nav-bar">
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="stays.html" class="active">Stays</a></li>
+            <li><a href="#flights">Flights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cartstay.html">Cart</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+          <a href="php/logout.php" class="logout-link">Logout</a>
+        </div>
+      </nav>
+  
+      <!-- Content Wrapper -->
+      <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="theme-controls">
+            <h2>Display Settings</h2>
+            <!-- Font Size Controls -->
+            <div class="control-group">
+              <label>Font Size: <span id="fontSizeDisplay">16</span>px</label>
+              <div class="font-size-controls">
+                <button class="btn" onclick="changeFontSize(-2)">-</button>
+                <input
+                  type="range"
+                  id="fontSizeSlider"
+                  min="12"
+                  max="24"
+                  value="16"
+                />
+                <button class="btn" onclick="changeFontSize(2)">+</button>
+              </div>
+            </div>
+  
+            <!-- Background Color Controls -->
+            <div class="control-group">
+              <label>Background Color</label>
+              <div class="color-options" id="colorOptions">
+                <!-- Color buttons will be added by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </aside>
+  
+        <!-- Main Content -->
+        <main class="main-content">
+          <h2>Bookings</h2>
+          <div id="cart-details"></div>
+         
+        </main>
+      </div>
+  
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+      </footer>
+    <script src="cartstay.js"></script>
+</body>
+</html>

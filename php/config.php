@@ -1,7 +1,7 @@
 <?php
-$db_host = 'mysql';
-$db_user = 'user';
-$db_pass = 'userpassword';
+$db_host = 'localhost';
+$db_user = 'root';
+$db_pass = '';
 $db_name = 'travel_app';
 
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);

@@ -1,120 +1,120 @@
 [
   {
-    "hotel_id": "H001",
+    "hotel_id": 1,
     "hotel_name": "Grand Texas Hotel",
-    "city": "Austin",
-    "price_per_night": 120.0
+    "city": "Dallas",
+    "price_per_night": 120.00
   },
   {
-    "hotel_id": "H002",
+    "hotel_id": 2,
     "hotel_name": "California Dream Inn",
     "city": "Los Angeles",
-    "price_per_night": 150.0
+    "price_per_night": 150.00
   },
-  {
-    "hotel_id": "H003",
+    {
+    "hotel_id": "3",
     "hotel_name": "Luxury Stay SF",
     "city": "San Francisco",
     "price_per_night": 200.0
   },
   {
-    "hotel_id": "H004",
+    "hotel_id": "4",
     "hotel_name": "Houston Comfort Hotel",
     "city": "Houston",
     "price_per_night": 100.0
   },
   {
-    "hotel_id": "H005",
+    "hotel_id": "5",
     "hotel_name": "Beachside Resort",
     "city": "San Diego",
     "price_per_night": 180.0
   },
   {
-    "hotel_id": "H006",
+    "hotel_id": "6",
     "hotel_name": "The Golden Inn",
     "city": "Sacramento",
     "price_per_night": 140.0
   },
   {
-    "hotel_id": "H007",
+    "hotel_id": "7",
     "hotel_name": "Texas Star Hotel",
     "city": "Dallas",
     "price_per_night": 110.0
   },
   {
-    "hotel_id": "H008",
+    "hotel_id": "8",
     "hotel_name": "Pacific Paradise Hotel",
     "city": "Santa Monica",
     "price_per_night": 190.0
   },
   {
-    "hotel_id": "H009",
+    "hotel_id": "9",
     "hotel_name": "Austin Boutique Inn",
     "city": "Austin",
     "price_per_night": 130.0
   },
   {
-    "hotel_id": "H010",
+    "hotel_id": "10",
     "hotel_name": "Desert Oasis Hotel",
     "city": "Palm Springs",
     "price_per_night": 160.0
   },
   {
-    "hotel_id": "H011",
+    "hotel_id": "11",
     "hotel_name": "The Downtown Retreat",
     "city": "Dallas",
     "price_per_night": 115.0
   },
   {
-    "hotel_id": "H012",
+    "hotel_id": "12",
     "hotel_name": "The Grand Palms",
     "city": "Los Angeles",
     "price_per_night": 155.0
   },
   {
-    "hotel_id": "H013",
+    "hotel_id": "13",
     "hotel_name": "Bayview Hotel",
     "city": "San Francisco",
     "price_per_night": 210.0
   },
   {
-    "hotel_id": "H014",
+    "hotel_id": "14",
     "hotel_name": "City Comfort Suites",
     "city": "Sacramento",
     "price_per_night": 135.0
   },
   {
-    "hotel_id": "H015",
+    "hotel_id": "15",
     "hotel_name": "Texas Lodge",
     "city": "Houston",
     "price_per_night": 95.0
   },
   {
-    "hotel_id": "H016",
+    "hotel_id": "16",
     "hotel_name": "Cali Sunset Inn",
     "city": "Santa Monica",
     "price_per_night": 185.0
   },
   {
-    "hotel_id": "H017",
+    "hotel_id": "17",
     "hotel_name": "Riverside Hotel",
     "city": "San Diego",
     "price_per_night": 170.0
   },
   {
-    "hotel_id": "H018",
+    "hotel_id": "18",
     "hotel_name": "The Urban Retreat",
     "city": "San Francisco",
     "price_per_night": 195.0
   },
   {
-    "hotel_id": "H019",
+    "hotel_id": "19",
     "hotel_name": "Budget Stay Texas",
     "city": "Austin",
     "price_per_night": 80.0
   },
   {
-    "hotel_id": "H020",
+    "hotel_id": "20",
     "hotel_name": "Pacific View Inn",
     "city": "Santa Monica",
     "price_per_night": 210.0
